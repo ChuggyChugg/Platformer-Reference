@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://dax6e4fgw7hms"]
+
+[ext_resource type="Script" path="res://Scripts/Chimney.gd" id="1_6fc25"]
+[ext_resource type="Texture2D" uid="uid://iuv4xelnftya" path="res://Assets/Teleporter-Sheet.png" id="1_b0kku"]
+[ext_resource type="Texture2D" uid="uid://bf7htb7xmpa4v" path="res://Assets/Chimney_Sheet.png" id="2_wn53m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5lud"]
+atlas = ExtResource("2_wn53m")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iebd"]
+atlas = ExtResource("2_wn53m")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eon4"]
+atlas = ExtResource("2_wn53m")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03m6l"]
+atlas = ExtResource("2_wn53m")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy78r"]
+atlas = ExtResource("1_b0kku")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds8xm"]
+atlas = ExtResource("1_b0kku")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81mqy"]
+atlas = ExtResource("1_b0kku")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0g03"]
+atlas = ExtResource("1_b0kku")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd3g7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5lud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iebd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eon4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03m6l")
+}],
+"loop": true,
+"name": &"chimney",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy78r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds8xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81mqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0g03")
+}],
+"loop": true,
+"name": &"teleporter",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm824"]
+size = Vector2(31, 17)
+
+[node name="Chimney" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_6fc25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_dd3g7")
+animation = &"chimney"
+autoplay = "chimney"
+frame = 2
+frame_progress = 0.0478385
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_lm824")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk8dwnea5n7mj"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_hb5lw"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="2_7xfbu"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="3_2d4aj"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="4_4nquo"]
+[ext_resource type="PackedScene" uid="uid://dclw6h8g7u4ie" path="res://Scenes/big_gift.tscn" id="5_ll4dx"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="6_feq7d"]
+
+[node name="Second_World" type="Node2D"]
+script = ExtResource("1_hb5lw")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(320, 168)
+texture = ExtResource("2_7xfbu")
+region_rect = Rect2(-720, -580, 720, 580)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 40, 0, 40, 256, 184, 256, 256, 224, 320, 224, 320, 288, 496, 288, 496, 256, 600, 256, 600, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_2d4aj")]
+position = Vector2(72, 136)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes2" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(328, 288)
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(344, 288)
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(360, 288)
+
+[node name="Spikes5" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(376, 288)
+
+[node name="Spikes6" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(392, 288)
+
+[node name="Spikes7" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(408, 288)
+
+[node name="Spikes8" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(424, 288)
+
+[node name="Spikes9" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(440, 288)
+
+[node name="Spikes10" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(456, 288)
+
+[node name="Spikes11" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(472, 288)
+
+[node name="Spikes12" parent="Spikes" instance=ExtResource("4_4nquo")]
+position = Vector2(488, 288)
+
+[node name="Big_gift" parent="." instance=ExtResource("5_ll4dx")]
+position = Vector2(288, 152)
+
+[node name="Teleporter" parent="." instance=ExtResource("6_feq7d")]
+position = Vector2(577, 243)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 97.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Push Big gift
+Spike not good"

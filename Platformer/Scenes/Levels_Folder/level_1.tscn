@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwcdquf0grmeq"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_1hhjt"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="2_a5qq8"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="3_mfujp"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="4_puaym"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="5_lcnbk"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_1hhjt")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+texture = ExtResource("2_a5qq8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 40, 0, 40, 320, 152, 320, 200, 280, 256, 232, 352, 232, 352, 280, 448, 280, 448, 232, 536, 232, 560, 288, 600, 288, 600, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_mfujp")]
+position = Vector2(72, 240)
+
+[node name="Teleporter" parent="." instance=ExtResource("4_puaym")]
+position = Vector2(581, 275)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource("5_lcnbk")]
+position = Vector2(414, 280)
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource("5_lcnbk")]
+position = Vector2(414, 280)
+
+[node name="Spikes2" parent="Spikes" instance=ExtResource("5_lcnbk")]
+position = Vector2(398, 280)
+
+[node name="Spikes" parent="Spikes" instance=ExtResource("5_lcnbk")]
+position = Vector2(382, 280)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 334.0
+offset_bottom = 107.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+text = "Use WASD or ARROW keys to move
+
+Go to chimney to progress"
+
+[connection signal="body_entered" from="Teleporter" to="." method="_on_teleporter_body_entered"]
+[connection signal="child_entered_tree" from="Spikes" to="." method="_on_spikes_child_entered_tree"]

@@ -1,0 +1,195 @@
+[gd_scene load_steps=9 format=3 uid="uid://181j2mfouxk1"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_bawwf"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="2_5h8f3"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="3_e7rnb"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="4_ph2g5"]
+[ext_resource type="PackedScene" uid="uid://dclw6h8g7u4ie" path="res://Scenes/big_gift.tscn" id="5_ese4f"]
+[ext_resource type="PackedScene" uid="uid://davjahv4ptpka" path="res://Scenes/small_gift.tscn" id="6_m82kq"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="7_ulqk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_253ga"]
+size = Vector2(144, 104)
+
+[node name="level_9" type="Node2D"]
+script = ExtResource("1_bawwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 168)
+texture = ExtResource("2_5h8f3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 248, 88, 248, 208, 176, 256, 176, 256, 280, 320, 280, 320, 296, 360, 296, 360, 280, 400, 280, 400, 176, 448, 176, 504, 152, 544, 152, 544, 320, 616, 320, 616, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(328, 52)
+shape = SubResource("RectangleShape2D_253ga")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -72.0
+offset_top = -52.0
+offset_right = 72.0
+offset_bottom = 52.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="TopSpikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(264, 104)
+rotation = 3.14159
+
+[node name="Spikes2" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(280, 104)
+rotation = 3.14159
+
+[node name="Spikes3" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(296, 104)
+rotation = 3.14159
+
+[node name="Spikes4" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(312, 104)
+rotation = 3.14159
+
+[node name="Spikes5" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(328, 104)
+rotation = 3.14159
+
+[node name="Spikes6" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(344, 104)
+rotation = 3.14159
+
+[node name="Spikes7" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(360, 104)
+rotation = 3.14159
+
+[node name="Spikes8" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(376, 104)
+rotation = 3.14159
+
+[node name="Spikes9" parent="TopSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(392, 104)
+rotation = 3.14159
+
+[node name="SetofSpikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(392, 280)
+
+[node name="Spikes2" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(376, 280)
+
+[node name="Spikes3" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(368, 280)
+
+[node name="Spikes4" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(312, 280)
+
+[node name="Spikes5" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(296, 280)
+
+[node name="Spikes6" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(280, 280)
+
+[node name="Spikes7" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(264, 280)
+
+[node name="Spikes8" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(256, 264)
+rotation = 1.5708
+
+[node name="Spikes9" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(256, 200)
+rotation = 1.5708
+
+[node name="Spikes10" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(256, 216)
+rotation = 1.5708
+
+[node name="Spikes11" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(256, 232)
+rotation = 1.5708
+
+[node name="Spikes12" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(256, 248)
+rotation = 1.5708
+
+[node name="Spikes13" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(400, 264)
+rotation = -1.5708
+
+[node name="Spikes14" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(400, 200)
+rotation = -1.5708
+
+[node name="Spikes15" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(400, 216)
+rotation = -1.5708
+
+[node name="Spikes16" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(400, 232)
+rotation = -1.5708
+
+[node name="Spikes17" parent="SetofSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(400, 248)
+rotation = -1.5708
+
+[node name="HoleSpikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 168)
+rotation = -1.5708
+
+[node name="Spikes2" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 184)
+rotation = -1.5708
+
+[node name="Spikes3" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 200)
+rotation = -1.5708
+
+[node name="Spikes4" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 216)
+rotation = -1.5708
+
+[node name="Spikes5" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 232)
+rotation = -1.5708
+
+[node name="Spikes6" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 248)
+rotation = -1.5708
+
+[node name="Spikes7" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 264)
+rotation = -1.5708
+
+[node name="Spikes8" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 280)
+rotation = -1.5708
+
+[node name="Spikes9" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(616, 296)
+rotation = -1.5708
+
+[node name="Spikes10" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(608, 320)
+
+[node name="Spikes11" parent="HoleSpikes" instance=ExtResource("3_e7rnb")]
+position = Vector2(592, 320)
+
+[node name="Player" parent="." instance=ExtResource("4_ph2g5")]
+position = Vector2(48, 232)
+
+[node name="Big_gift" parent="." instance=ExtResource("5_ese4f")]
+position = Vector2(344, 280)
+
+[node name="small_gift" parent="." instance=ExtResource("6_m82kq")]
+position = Vector2(80, 184)
+
+[node name="Chimney" parent="." instance=ExtResource("7_ulqk1")]
+position = Vector2(560, 310)

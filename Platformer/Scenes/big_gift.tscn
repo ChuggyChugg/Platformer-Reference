@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dclw6h8g7u4ie"]
+
+[ext_resource type="Texture2D" uid="uid://clkwdjjsvyp0q" path="res://Assets/big_gifts.png" id="1_2it1r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r3b05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mtfo"]
+size = Vector2(30, 27)
+
+[node name="Big_gift" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 11
+mass = 0.55
+physics_material_override = SubResource("PhysicsMaterial_r3b05")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.43051e-06, -1.43051e-06)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_2it1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_6mtfo")

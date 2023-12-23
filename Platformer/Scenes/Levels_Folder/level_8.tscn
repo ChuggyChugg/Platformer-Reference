@@ -1,0 +1,265 @@
+[gd_scene load_steps=10 format=3 uid="uid://bm4s04y8mss3s"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_iagv7"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="2_28pyi"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="3_fwm4q"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="3_nfarm"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="5_0u10d"]
+[ext_resource type="PackedScene" uid="uid://davjahv4ptpka" path="res://Scenes/small_gift.tscn" id="5_klbyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8qvs"]
+size = Vector2(640, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brvgh"]
+size = Vector2(528, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk0lx"]
+size = Vector2(24, 136)
+
+[node name="level_6" type="Node2D"]
+script = ExtResource("1_iagv7")
+
+[node name="SnowyBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 168)
+texture = ExtResource("2_28pyi")
+
+[node name="Player" parent="." instance=ExtResource("3_fwm4q")]
+position = Vector2(48, 312)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, -8)
+shape = SubResource("RectangleShape2D_e8qvs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 232, 40, 232, 40, 264, 16, 264, 16, 336, 616, 336, 616, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, 248)
+shape = SubResource("RectangleShape2D_brvgh")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -272.0
+offset_top = -16.0
+offset_right = 264.0
+offset_bottom = 16.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="BottomSpikes" type="Node2D" parent="."]
+
+[node name="Spikes5" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(96, 264)
+rotation = 3.14159
+
+[node name="Spikes6" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(112, 264)
+rotation = 3.14159
+
+[node name="Spikes7" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(128, 264)
+rotation = 3.14159
+
+[node name="Spikes8" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(152, 336)
+
+[node name="Spikes9" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(168, 336)
+
+[node name="Spikes10" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(184, 336)
+
+[node name="Spikes11" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(200, 336)
+
+[node name="Spikes12" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(216, 336)
+
+[node name="Spikes13" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(232, 336)
+
+[node name="Spikes14" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(248, 336)
+
+[node name="Spikes15" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(256, 336)
+
+[node name="Spikes16" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 278)
+rotation = -1.5708
+
+[node name="Spikes17" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 296)
+rotation = -1.5708
+
+[node name="Spikes18" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 312)
+rotation = -1.5708
+
+[node name="Spikes22" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 312)
+rotation = -1.5708
+
+[node name="Spikes19" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 328)
+rotation = -1.5708
+
+[node name="Spikes20" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 264)
+rotation = -1.5708
+
+[node name="Spikes21" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(616, 248)
+rotation = -1.5708
+
+[node name="Spikes23" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(400, 264)
+rotation = 3.14159
+
+[node name="Spikes24" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(416, 264)
+rotation = 3.14159
+
+[node name="Spikes25" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(432, 264)
+rotation = 3.14159
+
+[node name="Spikes26" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(448, 264)
+rotation = 3.14159
+
+[node name="Spikes27" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(464, 264)
+rotation = 3.14159
+
+[node name="Spikes28" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(480, 264)
+rotation = 3.14159
+
+[node name="Spikes29" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(496, 264)
+rotation = 3.14159
+
+[node name="Spikes30" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(512, 264)
+rotation = 3.14159
+
+[node name="Spikes31" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(528, 264)
+rotation = 3.14159
+
+[node name="Spikes32" parent="BottomSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(544, 264)
+rotation = 3.14159
+
+[node name="smallGifts" type="Node2D" parent="."]
+position = Vector2(80, 280)
+
+[node name="small_gift" parent="smallGifts" instance=ExtResource("5_klbyf")]
+
+[node name="small_gift2" parent="smallGifts" instance=ExtResource("5_klbyf")]
+position = Vector2(0, 48)
+
+[node name="small_gift3" parent="smallGifts" instance=ExtResource("5_klbyf")]
+position = Vector2(0, 24)
+
+[node name="PillarSpikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(112, 96)
+
+[node name="Spikes2" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(120, 96)
+
+[node name="Spikes3" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 104)
+rotation = -1.5708
+
+[node name="Spikes4" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 120)
+rotation = -1.5708
+
+[node name="Spikes5" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 136)
+rotation = -1.5708
+
+[node name="Spikes6" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 152)
+rotation = -1.5708
+
+[node name="Spikes7" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 168)
+rotation = -1.5708
+
+[node name="Spikes8" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 192)
+rotation = -1.5708
+
+[node name="Spikes9" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 208)
+rotation = -1.5708
+
+[node name="Spikes10" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(104, 224)
+rotation = -1.5708
+
+[node name="Spikes11" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 168)
+rotation = 1.5708
+
+[node name="Spikes12" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 152)
+rotation = 1.5708
+
+[node name="Spikes13" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 136)
+rotation = 1.5708
+
+[node name="Spikes14" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 120)
+rotation = 1.5708
+
+[node name="Spikes15" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 104)
+rotation = 1.5708
+
+[node name="Spikes16" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(24, 88)
+rotation = 1.5708
+
+[node name="Spikes17" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(64, 232)
+
+[node name="Spikes18" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(88, 232)
+
+[node name="Spikes19" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(80, 232)
+
+[node name="Spikes20" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(144, 232)
+
+[node name="Spikes21" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(168, 232)
+
+[node name="Spikes22" parent="PillarSpikes" instance=ExtResource("3_nfarm")]
+position = Vector2(160, 232)
+
+[node name="Pillar" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar"]
+position = Vector2(116, 164)
+shape = SubResource("RectangleShape2D_gk0lx")
+
+[node name="ColorRect" type="ColorRect" parent="Pillar/CollisionShape2D"]
+offset_left = -12.0
+offset_top = -68.0
+offset_right = 12.0
+offset_bottom = 68.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Chimney" parent="." instance=ExtResource("5_0u10d")]
+position = Vector2(40, 219)

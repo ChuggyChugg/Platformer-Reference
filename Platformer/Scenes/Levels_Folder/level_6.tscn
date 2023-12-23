@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://crhqbahb782g5"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_6habs"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="1_py363"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="2_f46ln"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="4_rflyp"]
+[ext_resource type="PackedScene" uid="uid://dclw6h8g7u4ie" path="res://Scenes/big_gift.tscn" id="6_6vqb1"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="6_6way7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvo08"]
+size = Vector2(80, 16)
+
+[node name="level_8" type="Node2D"]
+script = ExtResource("1_6habs")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 168)
+texture = ExtResource("1_py363")
+
+[node name="Player" parent="." instance=ExtResource("2_f46ln")]
+position = Vector2(40, 304)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 320, 192, 320, 192, 344, 512, 344, 512, 320, 616, 320, 616, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Platform" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(64, 264)
+shape = SubResource("RectangleShape2D_yvo08")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/Platform"]
+offset_left = -40.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Platform2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(192, 216)
+shape = SubResource("RectangleShape2D_yvo08")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/Platform2"]
+offset_left = -40.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Platform3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(64, 168)
+shape = SubResource("RectangleShape2D_yvo08")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/Platform3"]
+offset_left = -40.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Platform4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(200, 120)
+shape = SubResource("RectangleShape2D_yvo08")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/Platform4"]
+offset_left = -40.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="BottomSpikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(200, 344)
+
+[node name="Spikes2" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(216, 344)
+
+[node name="Spikes3" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(232, 344)
+
+[node name="Spikes4" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(248, 344)
+
+[node name="Spikes5" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(264, 344)
+
+[node name="Spikes6" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(280, 344)
+
+[node name="Spikes7" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(296, 344)
+
+[node name="Spikes8" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(312, 344)
+
+[node name="Spikes9" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(328, 344)
+
+[node name="Spikes10" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(344, 344)
+
+[node name="Spikes11" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(360, 344)
+
+[node name="Spikes12" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(376, 344)
+
+[node name="Spikes13" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(392, 344)
+
+[node name="Spikes14" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(408, 344)
+
+[node name="Spikes15" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(424, 344)
+
+[node name="Spikes16" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(440, 344)
+
+[node name="Spikes17" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(456, 344)
+
+[node name="Spikes18" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(472, 344)
+
+[node name="Spikes19" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(488, 344)
+
+[node name="Spikes20" parent="BottomSpikes" instance=ExtResource("4_rflyp")]
+position = Vector2(504, 344)
+
+[node name="Chimney" parent="." instance=ExtResource("6_6way7")]
+position = Vector2(592, 307)
+
+[node name="Big_gift" parent="." instance=ExtResource("6_6vqb1")]
+position = Vector2(224, 96)
+
+[node name="Big_gift2" parent="." instance=ExtResource("6_6vqb1")]
+position = Vector2(216, 192)

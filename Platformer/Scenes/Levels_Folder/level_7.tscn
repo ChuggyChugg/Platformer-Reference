@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://blyifxx2ogm4h"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_amhnf"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="1_fonj1"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="3_kisr0"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="4_bbiga"]
+[ext_resource type="PackedScene" uid="uid://dclw6h8g7u4ie" path="res://Scenes/big_gift.tscn" id="5_14jfs"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="6_rrcuk"]
+
+[node name="level_7" type="Node2D"]
+script = ExtResource("1_amhnf")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 176)
+texture = ExtResource("1_fonj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 80, 80, 80, 272, 192, 448, 192, 448, 248, 272, 248, 80, 144, 24, 144, 24, 328, 273, 328, 286, 333, 286, 356, 319, 356, 319, 333, 328, 328, 400, 328, 411, 331, 411, 356, 445, 356, 445, 331, 457, 327, 616, 328, 616, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_kisr0")]
+position = Vector2(48, 56)
+
+[node name="Topspikes" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(280, 192)
+
+[node name="Spikes2" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(296, 192)
+
+[node name="Spikes3" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(312, 192)
+
+[node name="Spikes4" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(328, 192)
+
+[node name="Spikes5" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(392, 192)
+
+[node name="Spikes6" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(408, 192)
+
+[node name="Spikes7" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(424, 192)
+
+[node name="Spikes8" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(440, 192)
+
+[node name="Spikes9" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(440, 248)
+rotation = 3.14159
+
+[node name="Spikes10" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(424, 248)
+rotation = 3.14159
+
+[node name="Spikes11" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(408, 248)
+rotation = 3.14159
+
+[node name="Spikes12" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(392, 248)
+rotation = 3.14159
+
+[node name="Spikes13" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(376, 248)
+rotation = 3.14159
+
+[node name="Spikes14" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(360, 248)
+rotation = 3.14159
+
+[node name="Spikes15" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(344, 248)
+rotation = 3.14159
+
+[node name="Spikes16" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(328, 248)
+rotation = 3.14159
+
+[node name="Spikes17" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(312, 248)
+rotation = 3.14159
+
+[node name="Spikes18" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(296, 248)
+rotation = 3.14159
+
+[node name="Spikes19" parent="Topspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(280, 248)
+rotation = 3.14159
+
+[node name="Bottomspikes" type="Node2D" parent="."]
+position = Vector2(0, 11)
+
+[node name="Spikes" parent="Bottomspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(296, 344)
+
+[node name="Spikes2" parent="Bottomspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(312, 344)
+
+[node name="Spikes5" parent="Bottomspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(420, 344)
+
+[node name="Spikes6" parent="Bottomspikes" instance=ExtResource("4_bbiga")]
+position = Vector2(436, 344)
+
+[node name="Big_gift" parent="." instance=ExtResource("5_14jfs")]
+position = Vector2(479, 311)
+
+[node name="Big_gift2" parent="." instance=ExtResource("5_14jfs")]
+position = Vector2(546, 311)
+
+[node name="Chimney" parent="." instance=ExtResource("6_rrcuk")]
+position = Vector2(52, 315)

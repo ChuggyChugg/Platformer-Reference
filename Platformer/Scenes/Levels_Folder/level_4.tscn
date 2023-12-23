@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://hdud5borvpqh"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_kbv4s"]
+[ext_resource type="Texture2D" uid="uid://bx8bnuvkxerdy" path="res://Assets/SnowyBackground.png" id="2_mabaj"]
+[ext_resource type="PackedScene" uid="uid://bi52cvln4jy40" path="res://Scenes/player.tscn" id="3_p0djc"]
+[ext_resource type="PackedScene" uid="uid://cxytu6d2r16uq" path="res://Scenes/spikes.tscn" id="4_3p4jt"]
+[ext_resource type="PackedScene" uid="uid://dax6e4fgw7hms" path="res://Scenes/Chimney.tscn" id="5_8gokm"]
+[ext_resource type="PackedScene" uid="uid://dclw6h8g7u4ie" path="res://Scenes/big_gift.tscn" id="6_2sykf"]
+[ext_resource type="PackedScene" uid="uid://davjahv4ptpka" path="res://Scenes/small_gift.tscn" id="7_ehjm1"]
+
+[node name="Level_4" type="Node2D"]
+script = ExtResource("1_kbv4s")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+texture = ExtResource("2_mabaj")
+
+[node name="Player" parent="." instance=ExtResource("3_p0djc")]
+position = Vector2(72, 248)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 288, 128, 288, 256, 216, 320, 216, 320, 304, 512, 304, 512, 272, 608, 272, 608, 168, 536, 168, 536, 136, 608, 136, 608, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(0.772549, 0.858824, 1, 1)
+
+[node name="Spikes" type="Node2D" parent="."]
+position = Vector2(328, 304)
+
+[node name="Spikes" parent="Spikes" instance=ExtResource("4_3p4jt")]
+
+[node name="Spikes2" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(16, 0)
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(32, 0)
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(48, 0)
+
+[node name="Spikes5" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(64, 0)
+
+[node name="Spikes6" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(80, 0)
+
+[node name="Spikes7" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(96, 0)
+
+[node name="Spikes8" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(112, 0)
+
+[node name="Spikes9" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(128, 0)
+
+[node name="Spikes10" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(144, 0)
+
+[node name="Spikes11" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(160, 0)
+
+[node name="Spikes12" parent="Spikes" instance=ExtResource("4_3p4jt")]
+position = Vector2(176, 0)
+
+[node name="Chimney" parent="." instance=ExtResource("5_8gokm")]
+position = Vector2(577, 123)
+
+[node name="Big_gift" parent="." instance=ExtResource("6_2sykf")]
+position = Vector2(296, 192)
+
+[node name="small_gift" parent="." instance=ExtResource("7_ehjm1")]
+position = Vector2(560, 224)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 372.0
+offset_bottom = 79.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Okay have fun and solve the next 5 levels"
